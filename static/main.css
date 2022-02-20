@@ -1,0 +1,102 @@
+* {
+    font-family: arial black;
+    font-weight: bolder;
+    color: white;
+    overflow-x: none !important;
+}
+
+body,html {
+    background: #000;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.menu {
+    padding-right: 10vw;
+    height: 40vw;
+
+}
+
+.menu .plus-button{
+    font-size: 15vw;
+}
+
+.plus-button:hover{
+    color:#F2F3F5;
+   
+    
+}
+
+.dropdown-content {
+    position: absolute;
+    right: 0vw;
+    display: none;
+    width: 30vw;
+    white-space: nowrap;
+    text-align: right;
+    overflow: none;
+
+ 
+}
+
+.dropdown-content a {
+    color: #fff;
+    text-decoration: none;
+    text-align: right;
+    line-height: auto;
+    font-size: 3vw;
+    padding: 5vw;
+
+}
+
+
+.menu:hover .dropdown-content {
+    display: block; 
+}
+
+.dropdown-content:hover {
+    color: #F2F3F5;
+}
+
+
+
+.sphere-one-container {
+    background: transparent;
+    height: 100vw;
+    margin-top: 15vw;
+    overflow: none;
+}
+
+.sphere-one {
+    background: transparent;
+    height: 70vw;
+    width: 70vw;
+    position: absolute;
+    margin: 15vw;
+    overflow: none;
+    
+}
+
+#sphere-one {
+    overflow: none;
+}
+
+
+@media (min-width: 768px) {
+
+    .sphere-one-container {
+        background: transparent;
+        height: 50vw;
+        margin-top: 8vw;
+    }
+    
+    .sphere-one {
+        background: transparent;
+        height: 35vw;
+        width: 35vw;
+        position: absolute;
+        margin: 7.5vw;
+    
+    }
+    
+}

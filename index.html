@@ -3,10 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="static/bootstrap.css">
+    <link rel="stylesheet" href="static/main.css">
+    <script src="js/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/84/three.min.js"></script>
+    <script src="https://cdn.rawgit.com/mrdoob/three.js/master/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.6.3/dat.gui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/simplex-noise/2.3.0/simplex-noise.min.js"></script>
     <title>Web-Application</title>
 </head>
 <body>
-    
+    <div class="row clearfix">
+    <div class="container-fluid pull-right menu clearfix">
+        <h1 class="plus-button">+</h1>
+            <div class="dropdown-content">
+                <a href="#">SOUNDS</a><br>
+                <a href="#">HOME</a><br>
+                <a href="#">ABOUT</a><br>
+            </div>
+    </div>
+    </div>
+
+    <div class="row clearfix container-block-one">
+        <div class="container-fluid center-block">
+            <div class="sphere-one-container"id="sphere-one">
+                <a href="wireframe.html">
+                    <div  class="sphere-one">
+
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/sphere-one.js"></script>
 </body>
 </html>
