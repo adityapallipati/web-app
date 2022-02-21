@@ -3,12 +3,12 @@
   //resive obj so that it scales to view depending on windowsize
   
 
-  var container, camera, scene, renderer, mesh,
+  var container, camera, scene, renderer, mesh, 
 
  
   
-  CANVAS_WIDTH = 400,
-  CANVAS_HEIGHT = 4000;
+  CANVAS_WIDTH = 500,
+  CANVAS_HEIGHT = 500;
   
   
   
@@ -22,28 +22,24 @@
   
   scene = new THREE.Scene();
   
-  camera = new THREE.PerspectiveCamera( 10, CANVAS_WIDTH / CANVAS_HEIGHT, 1, 1000 );
-  camera.position.y = 0;
   
-  camera.position.z = 1000;
+  camera = new THREE.PerspectiveCamera( 5, CANVAS_WIDTH / CANVAS_HEIGHT, 1, 1000 );
+
+  
+  
+  camera.position.set(0, 20, 100);
   camera.lookAt( scene.position );
 
 
+
+
+
   
-  function onWindowResize() {
-
-    camera.aspect = window.innerWidth / window.innerHeight;
-    camera.updateProjectionMatrix();
-
-    renderer.setSize( window.innerWidth, window.innerHeight );
-
-    render();
-
-}
   
+
        // sphere one 
   
-       var icosahedronGeometryTwo = new THREE.IcosahedronGeometry(7, 4);
+       var icosahedronGeometryTwo = new THREE.IcosahedronGeometry(4, 4);
         var lambertMaterialTwo = new THREE.MeshLambertMaterial({
             color: 0xFFFFFF,
             wireframe: true
@@ -59,13 +55,13 @@
   
         var spotLightTwo = new THREE.SpotLight(0xffffff);
         spotLightTwo.intensity = .7;
-        spotLightTwo.position.set(90, 400, 300);
+        spotLightTwo.position.set(100, 100, 100);
         spotLightTwo.lookAt(sphere);
         spotLightTwo.castShadow = true;
         scene.add(spotLightTwo);
 
-        sphere.position.y = 79;
-        sphere.position.x = 0;
+  
+        sphere.position.x = .15;
         
         
 
@@ -75,9 +71,9 @@
             sphere.rotation.x += 0.001;
             sphere.rotation.y += 0.001;
 
-            renderer.autoClear = false;
+            renderer.autoClear = true;
 
-
+     
 
             renderer.render( scene, camera );
             
@@ -86,6 +82,8 @@
             (function animate() {
             
             requestAnimationFrame( animate );
+
+            
             
             render();
             

@@ -79,7 +79,78 @@ body,html {
 
 #sphere-one {
     overflow: none;
+    background: transparent; 
 }
+
+#sphere-one canvas {
+    background: transparent;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+
+  
+}
+
+
+audio {
+    position: fixed;
+    left: 10px;
+    bottom: 0px;
+    width: calc(100% - 20px);
+  }
+  
+  audio.active{
+    bottom: 10px;
+  }
+  
+  #thefile{
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: 1;
+   
+    
+  }
+  
+  label.file{
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    top: 85%;
+    transform: translate3d(-50%, -50%, 0);
+    padding: 1rem 2rem;
+    border-radius: 4px;
+    
+    background: transparent;
+    color: var(--textColor);
+    font-size: 1.25em;
+    font-weight: 700;
+    white-space: nowrap;
+
+    cursor: pointer;
+  }
+  
+  
+  label.file:hover{
+      background: transparent;
+      transform: translate3d(-50%, -55%, 0);
+  }
+  
+  label.file:active{
+      background: transparent;
+      transform: translate3d(-50%, -45%, 0);
+  }
+  /* make smoother */
+  label.file.normal{
+    transform: translate3d(5%, 50%, 0);
+    padding: 0.2rem 2rem;
+    font-size: 1rem;
+    top: 2vw;
+    left: 0;
+  }
+  
 
 
 @media (min-width: 768px) {
@@ -92,11 +163,18 @@ body,html {
     
     .sphere-one {
         background: transparent;
-        height: 35vw;
-        width: 35vw;
-        position: absolute;
-        margin: 7.5vw;
+        overflow: none;
     
+    }
+    
+
+    #sphere-one canvas {
+        background: transparent;
+        margin: auto;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
     }
     
 }
