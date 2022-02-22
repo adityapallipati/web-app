@@ -31,12 +31,6 @@
   camera.lookAt( scene.position );
 
 
-
-
-
-  
-  
-
        // sphere one 
   
        var icosahedronGeometryTwo = new THREE.IcosahedronGeometry(6, 4);
@@ -61,9 +55,7 @@
         scene.add(spotLightTwo);
 
   
-        sphere.position.set(0, 0, 0);
-        
-        
+      
 
 
         function render() {
@@ -71,7 +63,7 @@
             sphere.rotation.x += 0.001;
             sphere.rotation.y += 0.001;
 
-            renderer.autoClear = true;
+            renderer.autoClear = false;
 
      
 

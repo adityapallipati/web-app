@@ -4,12 +4,25 @@
     color: white;
     overflow-x: none !important;
 }
-
+/* MAIN BODY */
 body,html {
     background: #000;
     max-width: 100%;
     overflow-x: hidden;
 }
+
+/* HOME TITLE */
+.popover-title {
+    background: black;
+    border: none;
+  
+    margin: 0;
+    text-align: center;
+    font-size: 10vw;
+    z-index: 1;
+}
+
+/* MAIN MENU */
 
 .menu {
     padding-right: 10vw;
@@ -49,7 +62,6 @@ body,html {
 
 }
 
-
 .menu:hover .dropdown-content {
     display: block; 
 }
@@ -58,7 +70,7 @@ body,html {
     color: #F2F3F5;
 }
 
-
+/* PREVIEW SPHERE ONE */
 
 .sphere-one-container {
     background: transparent;
@@ -75,6 +87,7 @@ body,html {
     margin: 15vw;
     overflow: none;
     z-index: 10000;
+    top: 55vw;
     
 }
 
@@ -94,11 +107,52 @@ body,html {
   
 }
 
+/* SPHERE TWO */
+
+.sphere-two-container {
+    background: blue;
+    height: 100vw;
+    margin-top: 15vw;
+    overflow: none;
+}
+
+.sphere-two {
+    background: transparent;
+    border: 1px white solid;
+    height: 70vw;
+    width: 70vw;
+    position: absolute;
+    margin: 15vw;
+    overflow: none;
+    z-index: 10000;
+    top: 170vw;
+
+
+    
+}
+
+#sphere-two {
+    overflow: none;
+    background: transparent; 
+}
+
+#sphere-two canvas {
+    background: transparent;
+    position: absolute;
+    left: -15vw;
+    top: 160vw;
+
+ 
+
+  
+}
+
+/* SPHERE ONE - REACTIVE*/
 
 audio {
     position: fixed;
     left: 10px;
-    bottom: 0px;
+    bottom: 15px;
     width: calc(100% - 20px);
   }
   
@@ -134,8 +188,7 @@ audio {
 
     cursor: pointer;
   }
-  
-  
+   
   label.file:hover{
       background: transparent;
       transform: translate3d(-50%, -55%, 0);
@@ -155,8 +208,11 @@ audio {
   }
   
 
+/* LARGE VIEW */
 
 @media (min-width: 768px) {
+
+/* SPHERE ONE */
 
     .sphere-one-container {
         background: transparent;
