@@ -74,6 +74,7 @@ body,html {
     position: absolute;
     margin: 15vw;
     overflow: none;
+    z-index: 10000;
     
 }
 
@@ -84,9 +85,11 @@ body,html {
 
 #sphere-one canvas {
     background: transparent;
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
+    position: absolute;
+    left: -15vw;
+    top: 38vw;
+
+ 
 
   
 }
@@ -157,24 +160,39 @@ audio {
 
     .sphere-one-container {
         background: transparent;
-        height: 50vw;
-        margin-top: 8vw;
+     
+        overflow: none;
+  
     }
     
     .sphere-one {
         background: transparent;
         overflow: none;
-    
+        position: absolute;
+        z-index: 10000;
+        top: 40vw;
+        left: -10vw;
+
+        height: 50%;
+        width: 28%;
+        
     }
     
+    #sphere-one {
+        overflow: none;
+        background: transparent; 
+    }
 
+    #sphere-one a {
+        z-index: 10000;
+    }
+    
     #sphere-one canvas {
         background: transparent;
-        margin: auto;
-        width: 50%;
-        margin-left: auto;
-        margin-right: auto;
-        display: block;
+        position: absolute;
+        left: 0vw;
+        top: 50vw;
+        
+
     }
-    
 }

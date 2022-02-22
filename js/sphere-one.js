@@ -23,11 +23,11 @@
   scene = new THREE.Scene();
   
   
-  camera = new THREE.PerspectiveCamera( 5, CANVAS_WIDTH / CANVAS_HEIGHT, 1, 1000 );
+  camera = new THREE.PerspectiveCamera( 10, CANVAS_WIDTH / CANVAS_HEIGHT, 1, 1000 );
 
   
   
-  camera.position.set(0, 20, 100);
+  camera.position.set(0, 0, 100);
   camera.lookAt( scene.position );
 
 
@@ -39,7 +39,7 @@
 
        // sphere one 
   
-       var icosahedronGeometryTwo = new THREE.IcosahedronGeometry(4, 4);
+       var icosahedronGeometryTwo = new THREE.IcosahedronGeometry(6, 4);
         var lambertMaterialTwo = new THREE.MeshLambertMaterial({
             color: 0xFFFFFF,
             wireframe: true
@@ -61,7 +61,7 @@
         scene.add(spotLightTwo);
 
   
-        sphere.position.x = .15;
+        sphere.position.set(0, 0, 0);
         
         
 
