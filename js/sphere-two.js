@@ -8,7 +8,7 @@
       camera.lookAt(scene.position);
       scene.add(camera);
 
-      container = document.getElementById( 'sphere-one' );
+      container = document.getElementById( 'sphere-two' );
       document.body.appendChild(container);
 
       var renderer = new THREE.WebGLRenderer( { alpha: true, antialias: true   } );
@@ -128,7 +128,7 @@
   
         renderer.render( scene, camera );
 
-        renderer.autoClear = false;
+        renderer.autoClear = true;
 
         renderer.render(scene2, camera);
 
