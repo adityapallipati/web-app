@@ -48,10 +48,11 @@ function play() {
     renderer.setSize(window.innerWidth, window.innerHeight);
 
 
-    var icosahedronGeometry = new THREE.IcosahedronGeometry(10, 4);
+
+    var icosahedronGeometry = new THREE.IcosahedronGeometry(10, 1);
     var lambertMaterial = new THREE.MeshLambertMaterial({
-        color: 0xFFFFFF,
-        wireframe: true
+        color: 0xFFFF00,
+        wireframe: false
     });
 
     var ball = new THREE.Mesh(icosahedronGeometry, lambertMaterial);

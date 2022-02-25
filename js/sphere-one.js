@@ -64,7 +64,7 @@
   
         sphere.position.x = 0;
         sphere.position.y = 30;
-
+  
 
       //sphere two 
 
@@ -110,12 +110,14 @@
 
             renderer.autoClear = false;
 
-     
+            
 
-            renderer.render( scene, camera );
+            renderer.render( scene, camera);
             renderer.render(scene_two, camera_two);
             
             }
+
+            
             
             (function animate() {
             
