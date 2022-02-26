@@ -2,12 +2,9 @@
 
   //resive obj so that it scales to view depending on windowsize
   
-  
 
   var container, camera, scene, renderer, mesh, scene_two, camera_two
 
-
- 
   
   container = document.getElementById( 'sphere-one' );
   document.body.appendChild( container );
@@ -32,7 +29,6 @@
 
   camera_two.position.set(0, 0, 150);
   camera_two.lookAt(scene_two.position);
-
 
        // sphere one 
   
