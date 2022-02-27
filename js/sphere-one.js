@@ -38,7 +38,7 @@
             wireframe: true
         });
      
-        var material = new THREE.MeshBasicMaterial( {wireframe: true, antialias: true});
+        var material = new THREE.MeshBasicMaterial( {wireframe: true});
         var sphere = new THREE.Mesh(icosahedronGeometryTwo, lambertMaterialTwo);
         scene.add( sphere );
   
@@ -65,15 +65,22 @@
       //sphere two 
 
       var icosahedronGeometryThree = new THREE.IcosahedronGeometry(25, 1);
-        var lambertMaterialThree = new THREE.MeshLambertMaterial({
+      var lambertMaterialThree = new THREE.MeshLambertMaterial({
             color: 0xFFFF00,
             wireframe: false
+            
         });
      
-        var material_two = new THREE.MeshBasicMaterial( {wireframe: false, antialias: true});
-        var sphere_two = new THREE.Mesh(icosahedronGeometryThree, lambertMaterialThree);
+
+        var material_two = new THREE.MeshBasicMaterial( {wireframe: false});
+        var sphere_two = new THREE.Mesh(
+          icosahedronGeometryThree, 
+          lambertMaterialThree);
+
+     
         scene_two.add( sphere_two );
   
+
   
         var ambientLightThree = new THREE.AmbientLight(0xaaaaaa);
 
