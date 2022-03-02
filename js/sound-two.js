@@ -47,12 +47,19 @@ function play() {
     var renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
     renderer.setSize(window.innerWidth, window.innerHeight);
 
+    const textureLoader = new THREE.TextureLoader();
+    const golfNormal = textureLoader.load("goldball.jpeg");
 
 
-    var icosahedronGeometry = new THREE.IcosahedronGeometry(10, 1);
-    var lambertMaterial = new THREE.MeshLambertMaterial({
+    var icosahedronGeometry = new THREE.IcosahedronGeometry(10, 3);
+    var lambertMaterial = new THREE.MeshPhysicalMaterial({
         color: 0xFFFF00,
-        wireframe: false
+        wireframe: false,
+        normalMap: golfNormal,
+        roughness: 0.25,
+        transmission: 1,
+        thickness: 2
+        
     });
 
     var ball = new THREE.Mesh(icosahedronGeometry, lambertMaterial);
@@ -65,10 +72,22 @@ function play() {
 
     var spotLight = new THREE.SpotLight(0xffffff);
     spotLight.intensity = 0.9;
-    spotLight.position.set(-10, 40, 20);
+    spotLight.position.set(10, 40, 20);
     spotLight.lookAt(ball);
     spotLight.castShadow = true;
     scene.add(spotLight);
+
+    hemiLight = new THREE.HemisphereLight(0xaaaaaa, 0xffffff, .9);
+    scene.add(hemiLight);
+
+          light = new THREE.SpotLight(0xffffff,.9);
+          light.position.x = 0;
+          light.position.y = 20;
+          light.position.z = 0;
+          light.castShadow = true;
+          scene.add( light );
+
+   
 
     //var orbitControls = new THREE.OrbitControls(camera, renderer.domElement);
     //orbitControls.autoRotate = true;

@@ -5,17 +5,26 @@
     overflow-x: none !important;
 }
 /* MAIN BODY */
+
 body,html {
     background: #000;
-    max-width: 100%;
+    width: 100%;
     overflow-x: hidden;
 }
 
+
+#c{
+  width: 100% !important;
+  height: 100% !important;
+  position: absolute;
+}
+
+
 /* HOME TITLE */
+
 .popover-title {
     background: black;
     border: none;
-  
     margin: 0;
     text-align: center;
     font-size: 10vw;
@@ -30,8 +39,6 @@ body,html {
     padding: 0px 5px;
     font-size: 15vw;
     border: none;
-    
-    
   }
   
   .dropdown {
@@ -40,9 +47,6 @@ body,html {
     right: 6vw;
     top: 10vw;
     text-align: right;
-
-    
-    
   }
   
   .dropdown-content {
@@ -70,18 +74,31 @@ body,html {
   .drpbtn:hover {color: #ddd;}
 
 
-
-
 /* PREVIEW SPHERE ONE */
 
+#viewport {
 
+  position: fixed;
+  margin: 0;
+  padding: 0;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+
+}
+
+#c {
+  width: 400px;
+  height: 300px;
+}
 
 .sphere-one {
+
     background: transparent;
-    height: 45%;
+    height: 100%;
     width: 100%;
     position: absolute;
-
     overflow: none;
     z-index: 10000;
     top: 55vw;
@@ -94,16 +111,16 @@ display: none;
 }
 
 
+
 #sphere-one canvas {
-    background: transparent;
+    background: red;
     position: absolute;
     left: 0vw;
     top: 50vw;
-    height: 100%;
+    height: 100vh;
     width: 100%;
     padding-bottom: 10vw;
 
-  
 }
 
 /* SPHERE TWO */
@@ -120,6 +137,31 @@ display: none;
     
 }
 
+/* SPHERE THREE */
+.sphere-three {
+  background: transparent;
+  height: 300px;
+  width: 300px;
+  position: absolute;
+  z-index: 10000;
+  overflow: none;
+  z-index: 10000;
+  top: 300vw;
+  left: 10vw;
+  
+}
+
+#sphere-three canvas {
+  background: transparent;
+  position: absolute;
+  left: 0vw;
+  top: 100vw;
+  height: 100%;
+  width: 100%;
+  padding-bottom: 10vw;
+
+
+}
 
 /* SPHERE ONE - REACTIVE*/
 
@@ -182,7 +224,8 @@ audio {
   }
   
 
-/* LARGE VIEW */
+
+  /* LARGE VIEW */
 
 @media (min-width: 768px) {
 
@@ -216,6 +259,7 @@ audio {
 
 
 /* SPHERE TWO */
+
 .sphere-two {
     background: red;
     height: 300px;
