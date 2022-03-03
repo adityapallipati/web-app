@@ -2,43 +2,29 @@
 
   //resive obj so that it scales to view depending on windowsize
   
+  /*
 
-  var container, camera, scene, renderer, mesh, scene_two, camera_two, scene_three, camera_three;
+  var container, camera, scene, renderer, mesh;
 
 
 
   container = document.getElementById('c');
   renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true});
-  w = container.offsetWidth;
-  h = container.offsetHeight;
-  renderer.setSize(w, h, false);
-  renderer.setPixelRatio(window.devicePixelRatio);
-  document.body.appendChild( renderer.domElement );
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  document.body.appendChild( container );
+
 
   scene = new THREE.Scene();
   
-  scene_two = new THREE.Scene();
 
-  scene_three = new THREE.Scene();
 
-  camera = new THREE.PerspectiveCamera(45, w / h, 1, 1000);
+  camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 1000);
 
-  camera_two = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 1000);
-  
-  camera_three = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 1000);
 
   camera.position.x = 0;
   camera.position.y = 0;
-  camera.position.z = 150;
+  camera.position.z = 0;
   camera.lookAt(scene.position);
-
-
-
-  camera_two.position.set(0, 0, 150);
-  camera_two.lookAt(scene_two.position);
-
-  camera_three.position.set(0,0,150);
-  camera_three.lookAt(scene_three.position);
 
 
 
@@ -69,10 +55,7 @@
         spotLightTwo.castShadow = true;
         scene.add(spotLightTwo);
 
-        sphere.position.x = -43;
-        sphere.position.y = 110;
-        sphere.position.z = -190;
-
+        sphere.position.z = 100;
 
       //sphere two 
 
@@ -108,11 +91,10 @@
           scene.add( light );
           scene.add( sphere_two ); 
     
-          sphere_two.position.x = -50;
-          sphere_two.position.y = -60;
-          sphere_two.position.z = -250;
+          
+     
 
-
+        
 
         function render() {
 
@@ -131,6 +113,16 @@
             renderer.render(scene_three, camera_three);
             
             }
+            window.addEventListener( 'resize', onWindowResize, false );
+
+            function onWindowResize(){
+            
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+            
+                renderer.setSize( window.innerWidth, window.innerHeight );
+            
+            }
 
             
             (function animate() {
@@ -141,7 +133,106 @@
             
             render();
             
-        })();
+        })(); */
   
 
             
+//here comes the webgl
+
+var container, camera, scene, renderer, mesh, group;
+
+scene = new THREE.Scene();
+group = new THREE.Group();
+camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
+
+camera.position.set(0,0,100);
+camera.lookAt(scene.position);
+scene.add(camera);
+
+
+
+renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+renderer.setSize(window.innerWidth, window.innerHeight);
+
+
+
+
+// ball 1
+var icosahedronGeometry = new THREE.IcosahedronGeometry(18, 4);
+var lambertMaterial = new THREE.MeshLambertMaterial({
+    color: 0xFFFFFF,
+    wireframe: true
+});
+
+var ball = new THREE.Mesh(icosahedronGeometry, lambertMaterial);
+ball.position.set(0, 19, 0);
+group.add(ball);
+
+// ball 2
+
+const textureLoader = new THREE.TextureLoader();
+const golfNormal = textureLoader.load("textures/goldball.jpeg");
+
+
+var icosahedronGeometryTwo = new THREE.IcosahedronGeometry(18, 2);
+var lambertMaterialTwo = new THREE.MeshPhysicalMaterial({
+  color: 0xFFFF00,
+  wireframe: false,
+  normalMap: golfNormal,
+  roughness: 0.30
+  
+});
+
+var ball2 = new THREE.Mesh(icosahedronGeometryTwo, lambertMaterialTwo);
+ball2.position.set(0, -20, 0);
+group.add(ball2);
+
+
+
+
+var ambientLight = new THREE.AmbientLight(0xaaaaaa);
+scene.add(ambientLight);
+
+var spotLight = new THREE.SpotLight(0xffffff);
+spotLight.intensity = 0.9;
+spotLight.position.set(-10, 40, 20);
+spotLight.lookAt(ball);
+spotLight.castShadow = true;
+scene.add(spotLight);
+
+
+var spotLight = new THREE.SpotLight(0xffffff);
+spotLight.intensity = 0.9;
+spotLight.position.set(-10, -100, 90);
+spotLight.lookAt(ball);
+spotLight.castShadow = true;
+scene.add(spotLight);
+
+scene.add(group);
+
+document.getElementById('c').appendChild(renderer.domElement);
+
+window.addEventListener('resize', onWindowResize, false);
+
+render();
+
+function onResize() {
+  console.log('You resized the browser window!');
+}
+
+window.addEventListener('resize', onResize);
+
+
+function render() {
+
+  group.rotation.y += 0.005;
+  renderer.render(scene, camera);
+  requestAnimationFrame(render);
+}
+
+
+function onWindowResize() {
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(window.innerWidth, window.innerHeight);
+}

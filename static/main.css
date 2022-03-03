@@ -12,11 +12,32 @@ body,html {
     overflow-x: hidden;
 }
 
+iframe {
+  border: none;
+  overflow: none;
+  margin: 0;
+  padding: 0;
+}
 
-#c{
-  width: 100% !important;
-  height: 100% !important;
+html, body {
+  margin: 0;
+  height: 2000px;
+}
+canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
   position: absolute;
+  top: 30vw;
+  overflow-y: scroll;
+}
+
+#block-two {
+  height: 1000px;
+  width: 100%;
+  position: absolute;
+  top: 250vw;
+
 }
 
 
@@ -76,22 +97,6 @@ body,html {
 
 /* PREVIEW SPHERE ONE */
 
-#viewport {
-
-  position: fixed;
-  margin: 0;
-  padding: 0;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-
-}
-
-#c {
-  width: 400px;
-  height: 300px;
-}
 
 .sphere-one {
 
@@ -112,16 +117,7 @@ display: none;
 
 
 
-#sphere-one canvas {
-    background: red;
-    position: absolute;
-    left: 0vw;
-    top: 50vw;
-    height: 100vh;
-    width: 100%;
-    padding-bottom: 10vw;
 
-}
 
 /* SPHERE TWO */
 .sphere-two {
@@ -231,47 +227,12 @@ audio {
 
 /* SPHERE ONE */
 
-.sphere-one {
-    background: red;
-    height: 100px;
-    width: 100px;
-    position: absolute;
-    margin: 5vw;
-    padding: 0vw;
-    overflow: none;
-    z-index: 10000;
-    top: 15vw;
-    left: 0vw;
-    
+
+#block-two {
+  position: absolute;
+  top: 100vw;
 }
 
-.sphere-one h1 {
-    display: block;
-    white-space: nowrap;
-    padding: 1vw;
-}
-
-#sphere-one canvas {
-   display: none;
-
-  
-}
-
-
-/* SPHERE TWO */
-
-.sphere-two {
-    background: red;
-    height: 300px;
-    width: 300px;
-    position: absolute;
-    z-index: 10000;
-    overflow: none;
-    z-index: 10000;
-    top: 120vw;
-    left: 20vw;
-    
-}
 
 
 }
