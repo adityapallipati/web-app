@@ -158,14 +158,14 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 
 
 // ball 1
-var icosahedronGeometry = new THREE.IcosahedronGeometry(18, 4);
+var icosahedronGeometry = new THREE.IcosahedronGeometry(18, 10);
 var lambertMaterial = new THREE.MeshLambertMaterial({
     color: 0xFFFFFF,
     wireframe: true
 });
 
 var ball = new THREE.Mesh(icosahedronGeometry, lambertMaterial);
-ball.position.set(0, 19, 0);
+ball.position.set(0, 21, 0);
 group.add(ball);
 
 // ball 2
@@ -174,7 +174,7 @@ const textureLoader = new THREE.TextureLoader();
 const golfNormal = textureLoader.load("textures/goldball.jpeg");
 
 
-var icosahedronGeometryTwo = new THREE.IcosahedronGeometry(18, 2);
+var icosahedronGeometryTwo = new THREE.IcosahedronGeometry(18, 4);
 var lambertMaterialTwo = new THREE.MeshPhysicalMaterial({
   color: 0xFFFF00,
   wireframe: false,
@@ -184,10 +184,8 @@ var lambertMaterialTwo = new THREE.MeshPhysicalMaterial({
 });
 
 var ball2 = new THREE.Mesh(icosahedronGeometryTwo, lambertMaterialTwo);
-ball2.position.set(0, -20, 0);
+ball2.position.set(0, -22, 0);
 group.add(ball2);
-
-
 
 
 var ambientLight = new THREE.AmbientLight(0xaaaaaa);
@@ -195,18 +193,13 @@ scene.add(ambientLight);
 
 var spotLight = new THREE.SpotLight(0xffffff);
 spotLight.intensity = 0.9;
-spotLight.position.set(-10, 40, 20);
+spotLight.position.set(-160, 10, -120);
 spotLight.lookAt(ball);
 spotLight.castShadow = true;
 scene.add(spotLight);
 
 
-var spotLight = new THREE.SpotLight(0xffffff);
-spotLight.intensity = 0.9;
-spotLight.position.set(-10, -100, 90);
-spotLight.lookAt(ball);
-spotLight.castShadow = true;
-scene.add(spotLight);
+
 
 scene.add(group);
 

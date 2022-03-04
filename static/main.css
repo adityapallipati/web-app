@@ -223,6 +223,17 @@ audio {
 
   /* LARGE VIEW */
 
+  @media (min-width: 568px) {
+
+    /* SPHERE ONE */
+    
+    
+    #block-two {
+      position: absolute;
+      top: 150vw;
+    }
+    
+  }
 @media (min-width: 768px) {
 
 /* SPHERE ONE */
