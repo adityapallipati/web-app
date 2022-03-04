@@ -19,18 +19,7 @@ iframe {
   padding: 0;
 }
 
-html, body {
-  margin: 0;
-  height: 2000px;
-}
-canvas {
-  width: 100%;
-  height: 100%;
-  display: block;
-  position: absolute;
-  top: 30vw;
-  overflow-y: scroll;
-}
+
 
 #block-two {
   height: 1000px;
