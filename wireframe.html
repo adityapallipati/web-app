@@ -13,30 +13,66 @@
     <title>Wireframe</title>
 </head>
 <body>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
     <div id="content">
     
- <!-- -->
+ <!-- 
         <label for="thefile" class="file"> SELECT AUDIO FILE
-
-        
           <input type="file" id="thefile" accept="audio/*" />
-
-          
-        </label>
+        </label> -->
 
         
-        <label for="selection">Listen:</label>
+        <label for="selection" class="file">Listen:</label>
         <select id="selection">
           <option value="">SELECT A SOUND</option>
           <option value="sounds/1.mp3">SOUND ONE</option>
           <option value="sounds/2.mp3">SOUND TWO</option>
         </select>
-
+        <br/>
+        
+        <audio id="player" src="" controls="controls">
+  
+          Your browser does not support the audio element.
+        </audio>
+        
+   
     
+    <!-- 
         
         <audio id="audio" src="" controls>
           
-        </audio>
+        </audio> 
+              <script>
+    
+          $(document).ready(function() {
+          
+          $('#selection').on('change', function() {
+            change($(this).val());
+          });
+          
+          });
+          
+          
+          function change(sourceUrl) {
+          var audio = document.getElementById("player");
+          var source = document.getElementById("mp3_src");
+          
+          audio.pause();
+          
+          if (sourceUrl) {
+            source.src = sourceUrl;
+            audio.load();
+            audio.play();
+          }
+          }
+          
+          </script>
+      
+      
+      
+      -->
 
 
      <!--

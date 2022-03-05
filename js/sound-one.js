@@ -6,8 +6,8 @@ var noise = new SimplexNoise();
 // the main visualiser function
 var vizInit = function (){
   
-  var file = document.getElementById("thefile");
-  var audio = document.getElementById("audio");
+  var file = document.getElementById("selection");
+  var audio = document.getElementById("player");
   var fileLabel = document.querySelector("label.file");
   
   document.onload = function(e){
@@ -15,13 +15,14 @@ var vizInit = function (){
     audio.play();
     play();
   }
-  
-  file.onchange = function(){
+
+
+  file.onchange = function(e){
     fileLabel.classList.add('normal');
     audio.classList.add('active');
-    var files = this.files;
     
-    audio.src = URL.createObjectURL(files[0]);
+    
+    audio.src = e.target.value;
     audio.load();
     audio.play();
     play();
