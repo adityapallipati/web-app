@@ -15,6 +15,7 @@
 <body>
     <div id="content">
     
+ <!-- -->
         <label for="thefile" class="file"> SELECT AUDIO FILE
 
         
@@ -24,11 +25,29 @@
         </label>
 
         
+        <label for="selection">Listen:</label>
+        <select id="selection">
+          <option value="">SELECT A SOUND</option>
+          <option value="sounds/1.mp3">SOUND ONE</option>
+          <option value="sounds/2.mp3">SOUND TWO</option>
+        </select>
+
+    
         
-        <audio id="audio" controls>
+        <audio id="audio" src="" controls>
           
         </audio>
 
+
+     <!--
+<audio 
+id="audio"
+src="sounds/1.mp3"
+className="active"
+controls
+autoplay
+onPlay={play}
+></audio> -->
 
         <div id="out"></div>
       </div> 

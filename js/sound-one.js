@@ -15,6 +15,7 @@ var vizInit = function (){
     audio.play();
     play();
   }
+  
   file.onchange = function(){
     fileLabel.classList.add('normal');
     audio.classList.add('active');

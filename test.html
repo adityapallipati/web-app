@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <label for="selection">Listen:</label>
+    <select id="selection">
+      <option value="">SELECT A SOUND</option>
+      <option value="sounds/1.mp3">SOUND ONE</option>
+      <option value="sounds/2.mp3">SOUND TWO</option>
+    </select>
+    <br/>
+    
+    <audio id="player" controls="controls">
+      <source id="mp3_src" src="" type="audio/mp3" />
+      Your browser does not support the audio element.
+    </audio>
+    
+<script>
+
+$(document).ready(function() {
+
+$('#selection').on('change', function() {
+  change($(this).val());
+});
+
+});
+
+
+function change(sourceUrl) {
+var audio = document.getElementById("player");
+var source = document.getElementById("mp3_src");
+
+audio.pause();
+
+if (sourceUrl) {
+  source.src = sourceUrl;
+  audio.load();
+  audio.play();
+}
+}
+
+</script>
+</body>
+</html>
